@@ -3,6 +3,9 @@
 echo "Please enter your PSU ID (abc1234):";
 read name;
 
+## test commit
+
+
 date=$(date);
 
 echo "Setting up the levels of the game... please stand by...";
