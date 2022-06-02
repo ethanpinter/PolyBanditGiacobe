@@ -3,9 +3,6 @@
 echo "Please enter your PSU ID (abc1234):";
 read name;
 
-## test commit
-
-
 date=$(date);
 
 echo "Setting up the levels of the game... please stand by...";
@@ -99,17 +96,35 @@ export level20_pass;
 
 
 # creates new users for levels
-adduser level0 --home /home/level0 --disabled-password --shell /bin/bash --gecos ""
-adduser level1 --home /home/level1 --disabled-password --shell /bin/bash --gecos ""
-adduser level2 --home /home/level2 --disabled-password --shell /bin/bash --gecos ""
-adduser level3 --home /home/level3 --disabled-password --shell /bin/bash --gecos ""
-adduser level4 --home /home/level4 --disabled-password --shell /bin/bash --gecos ""
-adduser level5 --home /home/level5 --disabled-password --shell /bin/bash --gecos ""
-adduser level6 --home /home/level6 --disabled-password --shell /bin/bash --gecos ""
-adduser level7 --home /home/level7 --disabled-password --shell /bin/bash --gecos ""
-adduser level8 --home /home/level8 --disabled-password --shell /bin/bash --gecos ""
-adduser level9 --home /home/level9 --disabled-password --shell /bin/bash --gecos ""
-adduser level10 --home /home/level10 --disabled-password --shell /bin/bash --gecos ""
+## to-do 
+## arch uses useradd, buildroot uses adduser? change syntax to arch comp?
+mkdir /home
+mkdir home/level0
+mkdir home/level1
+mkdir home/level2
+mkdir home/level3
+mkdir home/level4
+mkdir home/level5
+mkdir home/level6
+mkdir home/level7
+mkdir home/level8
+mkdir home/level9
+mkdir home/level10
+
+
+adduser level0 -h /home/level0 -D -s /bin/sh -g ""
+adduser level1 -h /home/level1 -D -s /bin/sh -g ""
+adduser level2 -h /home/level2 -D -s /bin/sh -g ""
+adduser level3 -h /home/level3 -D -s /bin/sh -g ""
+adduser level4 -h /home/level4 -D -s /bin/sh -g ""
+adduser level5 -h /home/level5 -D -s /bin/sh -g ""
+adduser level6 -h /home/level6 -D -s /bin/sh -g ""
+adduser level7 -h /home/level7 -D -s /bin/sh -g ""
+adduser level8 -h /home/level8 -D -s /bin/sh -g ""
+adduser level9 -h /home/level9 -D -s /bin/sh -g ""
+adduser level10 -h /home/level0 -D -s /bin/sh -g ""
+
+
 
 # sets passwords for levels
 echo -e "$level0_pass\n$level0_pass\n" | passwd level0
@@ -125,17 +140,17 @@ echo -e "$level9_pass\n$level9_pass\n" | passwd level9
 echo -e "$level10_pass\n$level10_pass\n" | passwd level10
 
 # add files for levels
-bash PolyBandit/level0.sh;
-bash PolyBandit/level1.sh;
-bash PolyBandit/level2.sh;
-bash PolyBandit/level3.sh;
-bash PolyBandit/level4_easy.sh;
-bash PolyBandit/level5.sh;
-bash PolyBandit/level6.sh;
-bash PolyBandit/level7.sh;
-bash PolyBandit/level8.sh;
-bash PolyBandit/level9.sh;
-bash PolyBandit/level10.sh;
+./PolyBandit/level0.sh;
+./PolyBandit/level1.sh;
+./PolyBandit/level2.sh;
+./PolyBandit/level3.sh;
+./PolyBandit/level4_easy.sh;
+./PolyBandit/level5.sh;
+./PolyBandit/level6.sh;
+./PolyBandit/level7.sh;
+./PolyBandit/level8.sh;
+./PolyBandit/level9.sh;
+./PolyBandit/level10.sh;
 
 echo "Now starting the game. Please log in with the password 'level0'";
 
